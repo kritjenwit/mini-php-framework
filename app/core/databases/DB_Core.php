@@ -2,9 +2,10 @@
 
 class DB_Core {    
 
-    private $servername = "localhost";
-    private $username = "root";
-    private $password = "";
+    private $servername = DB_HOST;
+    private $username = DB_USER;
+    private $password = DB_PASS;
+    
     protected $connection;
     public $db_name;
 
