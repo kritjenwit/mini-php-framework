@@ -3,7 +3,10 @@
 ## Getting Started
 
 1. Go to app/config/config.php
-2. Change DB variables, URLROOT and SITENAME 
+2. Change 
+  * DB variables
+  * URLROOT
+  * SITENAME 
 
 ### Command for updating
 ```
