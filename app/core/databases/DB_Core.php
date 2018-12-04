@@ -5,7 +5,7 @@ class DB_Core {
     private $servername = DB_HOST;
     private $username = DB_USER;
     private $password = DB_PASS;
-    
+
     protected $connection;
     public $db_name;
 
@@ -221,6 +221,29 @@ class DB_Core {
 
     # ------------------------------------------------------------------------------
 
+    # =========================
+    # Insert into table section
+    #==========================
+
+    /**
+     * ------------------
+     * Insert Template
+     * ------------------
+     * 
+     * 
+     * 
+     * @param   string    $table_name      Table's name
+     * @param   string    $column_name
+     * @param   string    $value
+     *
+     * @return  string                     Insert into Query
+     */
+    protected function insert_template($table_name,$column_name,$value)
+    {
+        return 'INSERT INTO '.$table_name.' '.$column_name.' VALUES '.$value.' ';
+    }
+
+    # ------------------------------------------------------------------------------
 
     private function set_db_name($db_name)
     {
