@@ -104,6 +104,11 @@ class DB_Query_Builder extends DB_Core
 
     # ------------------------------------------------------------------------------
 
+    public function update($table_name,$set,$where)
+    {
+
+    }
+
     public function DB_builder_insert($sql)
     {
         return $this->connection->exec($sql) ? true : false;
@@ -131,6 +136,23 @@ class DB_Query_Builder extends DB_Core
             return parent::fetch($sql);
         else
             return parent::fetch($sql,$bind);
+    }
+
+    public function DB_Query($sql)
+    {
+        return parent::fetch($sql);
+    }
+
+    public function show_database()
+    {
+        $sql = 'SHOW DATABASES';
+        $db_list = $this->DB_Query($sql);
+        $list = array();
+        foreach ($db_list as $v)
+        {
+            array_push($list,$v['Database']);
+        }
+        return $list;
     }
 
 }
