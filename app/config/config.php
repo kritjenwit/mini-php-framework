@@ -14,17 +14,11 @@ $config['DB_PASS'] = '';
  */
 $config['BASE_URL'] = 'http://localhost/krit/public/';
 $config['URL_ROOT'] = 'http://localhost/krit/';
+$config['ASSET_PATH'] = $config['URL_ROOT'].'assets/';
 $config['APP_ROOT'] = dirname(dirname(__FILE__));
 
 
-
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-
-// App Root
-define('APPROOT', dirname(dirname(__FILE__)));
-// URL Root
-define('URLROOT', 'http://localhost/krit/');
-// Site Name
-define('BASE_URL', 'http://localhost/krit/public/');
+foreach ($config as $k => $v)
+{
+    define($k,$v,true);
+}
