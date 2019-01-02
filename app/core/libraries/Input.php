@@ -20,6 +20,7 @@ class Input {
     public function get($param = NULL)
     {
         $output = array();
+        # In case of param is || are specified as array
         if(is_array($param) && count($param) !== 0)
         {   
             # Convert key of $_GET to a value
