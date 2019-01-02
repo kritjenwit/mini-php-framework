@@ -13,19 +13,20 @@ class Session {
      * 
      * This function is to set a session
      * 
-     * @param mixed     $session        Data for storing into $_SESSION
-     * @param string    $session_name   Normally, $_SESSION is stored in data
-     *                                  If $session_name is mentioned, data will store in given name.
+     * @param mixed     $session _value         Data or Value for storing into $_SESSION
+     * @param string    $session_name           Normally, $_SESSION is stored in data
+     *                                          If $session_name is mentioned, data will store in given name.
      * 
      */
-    public function _set($session,$session_name = NULL)
+    public function _set($session_value,$session_name = NULL)
     {
+        # If session name is not mentioned
         if($session_name !== NULL)
-            $_SESSION[$session_name] = $session;
-        elseif(is_array($session))
-            $_SESSION['data'] = $session;
+            $_SESSION[$session_name] = $session_value;
+        elseif(is_array($session_value))
+            $_SESSION['data'] = $session_value;
         else
-            $_SESSION['data'] = $session;
+            $_SESSION['data'] = $session_value;
          
     }
 

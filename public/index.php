@@ -1,18 +1,7 @@
-<?php require_once '../app/bootstrap.php'; ?>
+<?php require_once '../app/bootstrap.php'; 
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+$db->connect('demo_neon');
 
-    <title>Please select database</title>
-</head>
-<body>
-<?php
+$session->_set('Hello World','Greeting');
 
-?>
-</body>
-</html>
+alert($session->_get());

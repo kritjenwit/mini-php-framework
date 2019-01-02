@@ -138,20 +138,28 @@ class DB_Query_Builder extends DB_Core
             return parent::fetch($sql,$bind);
     }
 
+    # ------------------------------------------------------------------------------
+
     public function DB_Query($sql)
     {
         return parent::fetch($sql);
     }
 
+    # ------------------------------------------------------------------------------
+
+    /**
+     * Show database function
+     *
+     *
+     * To list all database
+     */
     public function show_database()
     {
         $sql = 'SHOW DATABASES';
         $db_list = $this->DB_Query($sql);
         $list = array();
         foreach ($db_list as $v)
-        {
             array_push($list,$v['Database']);
-        }
         return $list;
     }
 
