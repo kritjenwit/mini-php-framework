@@ -1,10 +1,11 @@
 <?php require_once '../app/bootstrap.php'; 
 
-$idx = 2342342342;
+$idx = '123';
 
-if(is_string($idx) || is_numeric($idx))
+if((is_string($idx) && str_validate($idx)) || is_numeric($idx))
 {
    $idx = is_numeric($idx) ? strval($idx) : $idx;
+   echo $idx .' is String ';
    
 }
 else

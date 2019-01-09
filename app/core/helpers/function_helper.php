@@ -106,3 +106,11 @@ if(!function_exists('base_url'))
         return BASE_URL . $path;
     }
 }
+
+if(!function_exists('str_validate'))
+{
+    function str_validate($string)
+    {
+        return preg_match('/^[\w|\-]+$/', $string);
+    }
+}

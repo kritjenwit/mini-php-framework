@@ -24,9 +24,9 @@ class Output
     * @param   array    $data    Data to be send 
     * @return  object   $this    return itself
     */
-   public function send($data = [])
+   public function send($data = NULL)
    {
-      $this->__set('data',$data);
+      $this->__set('data',[$data]);
       return $this;
    }
    /**
@@ -40,7 +40,7 @@ class Output
 
    public function as_error($status = '400',$message = 'Bad request')
    {
-      $this->__set('status',$status)->__set('message',$message)->__set('total',count($this->__get('data')) ? count($this->__get('data')) : 0);
+      $this->__set('status',$status)->__set('message',$message)->__set('total',$this->__get('data') === NULL ? 0 : count($this->__get('data')));
       return $this->return_data();
    }
 
@@ -49,7 +49,7 @@ class Output
       return to_json(
          [
             'status' => $this->__get('status'),
-            'data' => [$this->__get('data')],
+            'data' => $this->__get('data'),
             'message' => $this->__get('message'),
             'total' => $this->__get('total')
          ]
