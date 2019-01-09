@@ -1,7 +1,13 @@
 <?php require_once '../app/bootstrap.php'; 
 
-$db->connect('demo_neon');
+$idx = 2342342342;
 
-$session->_set('Hello World','Greeting');
-
-alert($session->_get());
+if(is_string($idx) || is_numeric($idx))
+{
+   $idx = is_numeric($idx) ? strval($idx) : $idx;
+   
+}
+else
+{
+   echo 'NOT String or Numeric';
+}

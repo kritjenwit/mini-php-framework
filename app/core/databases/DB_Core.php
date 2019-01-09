@@ -2,14 +2,12 @@
 
 class DB_Core {    
 
-    private $servername = DB_HOST;
-    private $username = DB_USER;
-    private $password = DB_PASS;
-
+    protected $servername = DB_HOST;
+    protected $username = DB_USER;
+    protected $password = DB_PASS;
     protected $connection;
     public $db_name;
 
-    
     /**
      * Initiate Connection to Database
      * 
@@ -270,5 +268,32 @@ class DB_Core {
     public function get_connection()
     {
         return $this->connection;
+    }
+
+    # ------------------------------------------------------------------------------
+
+    /**
+     * Set Database Environment
+     * 
+     * 
+     * Database Environment includes of
+     * 1. Server's name OR Host's name
+     * 2. Username
+     * 3. Password
+     * 
+     * By default database will establish as in a config file
+     * 
+     * This function is used to new Connection as we need
+     * 
+     * @param   string  $servername     Server's name OR Host's name
+     * @param   string  $username       Username of $servername
+     * @param   string  $password       Password of $servername
+     * 
+     */
+    public function set_db_env($servername,$username,$password)
+    {
+        $this->servername = $servername;
+        $this->username = $username;
+        $this->password = $password;
     }
 }
